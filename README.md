@@ -4,6 +4,8 @@
 
 The scripts in this project will allow one to gather data on the words from the [Dictionary of Obscure Sorrows website](https://www.thedictionaryofobscuresorrows.com/). Given a text file of words to gather data on, it returns a JSON with information on the words, such as the defintion, part of speech, and origin.
 
+I was inspired to make this project because I needed a way to acquire a JSON of the words in the words in the dictionary of obscure sorrows for a word project I was working on for my personal website, and I couldn't find one online. The closest thing I found was [lazaryo's Dictionary of Obscure Sorrows API](https://github.com/lazaryo/obscure), which wasn't quite what I was looking for.
+
 ## What You Need
 
 1. Text file of words
