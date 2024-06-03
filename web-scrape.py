@@ -8,7 +8,7 @@ INPUT_FILE_PATH = "data/doos-words.txt"
 OUTPUT_FILE_PATH = "output/output.json"
 
 URL_PREFIX = "https://www.thedictionaryofobscuresorrows.com/word/"
-PART_OF_SPEECH_MAP = {"n.": "noun", "v.": "verb", "adj.": "adjective"}
+PART_OF_SPEECH_MAP = {"n.": "noun", "v.": "verb", "adj.": "adjective", "v. intr.": "intransitive verb"}
 
 def get_word(soup):
   """
@@ -34,10 +34,13 @@ def scrape_word(word):
   source = urlopen(url)
   soup = bs(source, 'html.parser')
 
-  word_dict = {"word": get_word(soup),
+  try:
+    word_dict = {"word": get_word(soup),
                "definition": get_def(soup),
                "part of speech": get_part_of_speech(soup),
                }
+  except:
+    print("Crashed on " + url)
   return word_dict
 
 def main():
@@ -54,7 +57,6 @@ def main():
   finally:
     file_reader.close()
   
-  # initialize soup for word
   for word in words_to_scrape:
     word_jsons.append(scrape_word(word.lower()))
   json.dump(word_jsons, open(OUTPUT_FILE_PATH, 'w'))

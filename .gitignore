@@ -5,5 +5,4 @@ __pycache__/
 venv/
 
 # Data files
-output/output.json
-data/doos-words.txt
+output/
