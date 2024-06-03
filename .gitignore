@@ -3,3 +3,7 @@ __pycache__/
 
 # Environments
 venv/
+
+# Data files
+output/output.json
+data/doos-words.txt
