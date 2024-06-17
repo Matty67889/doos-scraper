@@ -18,29 +18,34 @@ def get_word(soup):
 
 def get_part_of_speech(soup):
   """
-  Gets defintion of the word on the webpage mapped to the soup.
+  Gets the part of speech of the word on the webpage mapped to the soup.
   """
   part_of_speech_symb = soup.find_all("div", class_="word-part")[0].text
   return PART_OF_SPEECH_MAP[part_of_speech_symb]
 
 def get_def(soup):
   """
-  Gets the part of speech of the word on the webpage mapped to the soup.
+  Gets the defintion of the word on the webpage mapped to the soup.
   """
   return soup.find_all("div", class_="word-definition")[0].text
+
+def get_etymology(soup):
+  """
+  Gets the etymology of the word on the webpage mapped to the soup.
+  """
+  return soup.find_all("div", class_="word-etymology")[0].find("p").text
 
 def scrape_word(word):
   url = URL_PREFIX + word
   source = urlopen(url)
   soup = bs(source, 'html.parser')
 
-  try:
-    word_dict = {"word": get_word(soup),
-               "definition": get_def(soup),
-               "part of speech": get_part_of_speech(soup),
-               }
-  except:
-    print("Crashed on " + url)
+  word_dict = {"word": get_word(soup),
+              "definition": get_def(soup),
+              "partOfSpeech": get_part_of_speech(soup),
+              "etymology": get_etymology(soup)
+              }
+  
   return word_dict
 
 def main():

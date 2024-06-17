@@ -6,7 +6,7 @@ The scripts in this project will allow one to gather data on the words from the 
 
 I was inspired to make this project because I needed a way to acquire a JSON of the words in the words in the dictionary of obscure sorrows for a word project I was working on for my personal website, and I couldn't find one online. The closest thing I found was [lazaryo's Dictionary of Obscure Sorrows API](https://github.com/lazaryo/obscure), which wasn't quite what I was looking for.
 
-## What You Need
+## Getting Set Up
 
 ### Text file of words to search for
 
@@ -28,7 +28,7 @@ Setup a Python venv virtual environment as shown [in this Guide](https://docs.py
 1. Activate the virtual environment.
 2. Navigate to the folder containing `requirements.txt`. Download the python requirements with the command `pip install -r requirements.txt`.
 
-## How to Run
+## Usage
 
 To run the script, run `python web-scrape.py` after all the setup is complete.
 
