@@ -23,7 +23,7 @@ A list of words on the website from this project's last update is included for r
 
 The script requires the following libraries:
 
-[Beautiful Soup 4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-beautiful-soup)
+- [Beautiful Soup 4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-beautiful-soup)
 
 They can be installed on a computer by running `pip install -r requirements.txt` in the directory with `requirements.txt` in it. It can also be installed through a Python virtual environment, as described below.
 
@@ -38,7 +38,7 @@ Setup a Python venv virtual environment as shown [in this Guide](https://docs.py
 
 ## Usage
 
-To run the script, run `python web-scrape.py --words-list-path WORDS_LIST_PATH --output-file-path test OUTPUT_FILE_PATH`. Make sure that the file --output-file-path argument is a file that is already created if the desired path is nested under a directory.
+To run the script, run `python web-scrape.py --words-list-path <WORDS_LIST_PATH> --output-file-path test <OUTPUT_FILE_PATH>`. Make sure that the file --output-file-path argument is a file that is already created if the desired path is nested under a directory.
 
 For help with the arguments, run `python web-scrape.py -h`.
 
