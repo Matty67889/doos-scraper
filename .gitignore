@@ -6,6 +6,3 @@ venv/
 
 # Data files
 output/
-
-# Test files
-tests/

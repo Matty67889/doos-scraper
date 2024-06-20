@@ -19,6 +19,14 @@ A text file of words to search for is required. The file must be formatted in th
 
 A list of words on the website from this project's last update is included for reference of valid words.
 
+### Downloading Required Libraries
+
+The script requires the following libraries:
+
+[Beautiful Soup 4](https://beautiful-soup-4.readthedocs.io/en/latest/#installing-beautiful-soup)
+
+They can be installed on a computer by running `pip install -r requirements.txt` in the directory with `requirements.txt` in it. It can also be installed through a Python virtual environment, as described below.
+
 ### Setting up a Python environment
 
 Setting up a Python virtual environment is recommended so that the required libraries do not have to be downloaded on the main computer, but it is not necessary. If not setting up the virtual environment, skip the activate the virtual environment step below.
@@ -30,10 +38,24 @@ Setup a Python venv virtual environment as shown [in this Guide](https://docs.py
 
 ## Usage
 
-To run the script, run `python web-scrape.py` after all the setup is complete.
+To run the script, run `python web-scrape.py --words-list-path WORDS_LIST_PATH --output-file-path test OUTPUT_FILE_PATH`. Make sure that the file --output-file-path argument is a file that is already created if the desired path is nested under a directory.
+
+For help with the arguments, run `python web-scrape.py -h`.
+
+### Input
+
+The script takes in a file with a list of words formatted as described in [Text File](#text-file-of-words-to-search-for) section.
+
+### Output
+
+The script outputs a `.json` file with a list of json objects for each word in the input file.
+
+## Tests
+
+The test files in the `tests/` directory can be used to test the script. For example, running `python web-scrape.py --words-list-path tests/test-words1.txt --output-file-path test` will create a file named `test.json` with a list of JSON objects with attributes that describe the words.
 
 ## Special Notes
 
-1. The scraper may break if the website updates. Feel free to update the scraper accordingly on your own if need be!
+1. It is not guaranteed that the scraper will still work if the website updates. Feel free to update the scraper accordingly on your own if need be!
 
 2. Verify that the words in the text file provided are actually on the website, some words have accents, but the webpage link to them is the word without accents.
